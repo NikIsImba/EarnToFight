@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlgampdec13be"]
+
+[ext_resource type="PackedScene" uid="uid://pfqso2qdgidi" path="res://scenes/knight.tscn" id="1_gm02y"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0qfj4"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Knight" parent="." instance=ExtResource("1_gm02y")]
+position = Vector2(97, 195)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(98, 174)
+zoom = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(98, 236)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_0qfj4")
